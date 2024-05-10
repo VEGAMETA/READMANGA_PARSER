@@ -10,7 +10,7 @@ session = requests.Session()
 opened = False
 base_url: str = "https://readmanga.me/"
 
-save_path = "./manga" # H:/Pictures/Manga
+save_path = "./manga"
 
 def search_manga(search_query):
     url = base_url + "search/suggestion?"
@@ -36,7 +36,7 @@ def get_volume_images(volume_url):
 
 def download_volume(images, manga_name, volume_name, offset=0):
     global opened
-    manga_name = re.sub('[^a-zA-Zа-яA-Я -]', '', manga_name)
+    manga_name = re.sub('[^a-zA-Zа-яA-Я\d -]', '', manga_name)
     Path(f"{save_path}/{manga_name}").mkdir(exist_ok=True)
     Path(f"{save_path}/{manga_name}/{volume_name}").mkdir(exist_ok=True)
     for n, image in enumerate(images):
