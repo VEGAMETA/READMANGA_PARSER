@@ -10,7 +10,7 @@ session = requests.Session()
 opened = False
 base_url: str = "https://readmanga.me/"
 
-save_path = "H:/Pictures/Manga"
+save_path = "./manga"
 
 def search_manga(search_query):
     url = base_url + "search/suggestion?"
