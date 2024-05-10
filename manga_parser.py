@@ -58,6 +58,7 @@ def download_volume(images, manga_name, volume_name, offset=0):
 
 
 def main():
+    global opened
     while True:
         clear()
         search_name: str = input("Enter manga name: ")
@@ -96,7 +97,10 @@ def main():
                     continue
             clear()
             download_volume(images, manga_name, volume_name, offset)
-
+            opened = False
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        clear()
