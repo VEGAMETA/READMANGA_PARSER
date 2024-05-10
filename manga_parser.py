@@ -8,9 +8,9 @@ def clear(): return os.system('cls')
 
 session = requests.Session()
 opened = False
-base_url: str = "https://readmanga.live/"
+base_url: str = "https://readmanga.me/"
 
-save_path = "./manga"
+save_path = "./manga" # H:/Pictures/Manga
 
 def search_manga(search_query):
     url = base_url + "search/suggestion?"
