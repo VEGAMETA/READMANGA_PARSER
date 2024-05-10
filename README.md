@@ -2,7 +2,7 @@
 
 Simple parser for readmanga.me to download manga.
 
-Set your manga folder to `save_path` variable
+Set `save_path` variable to your manga folder
 
 ## Installation
 
