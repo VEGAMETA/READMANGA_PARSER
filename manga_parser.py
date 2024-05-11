@@ -37,11 +37,11 @@ def get_volume_images(volume_url):
 def download_volume(images, manga_name, volume_name, offset=0):
     global opened
     manga_name = re.sub('[^a-zA-Zа-яA-Я\d -]', '', manga_name)
+    volume_name = re.sub('[^a-zA-Zа-яA-Я\d -]', '', volume_name)
     Path(f"{save_path}/{manga_name}").mkdir(exist_ok=True)
     Path(f"{save_path}/{manga_name}/{volume_name}").mkdir(exist_ok=True)
     for n, image in enumerate(images):
         if n < offset: continue
-        volume_name = re.sub('[^a-zA-Zа-яA-Я\d -]', '', volume_name)
         path = f"{save_path}/{manga_name}/{volume_name}/{n+1}.jpg"
         if Path(path).exists(): 
             if not opened: 
